@@ -1,0 +1,64 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#4f8f3a">
+    <title>Medieval World Simulation</title>
+  <link rel="stylesheet" href="styles/game.css">
+  <script type="module" src="src/game.js"></script>
+</head>
+<body>
+  <main id="world" aria-label="Medieval world">
+    <canvas id="world-canvas" aria-label="World map"></canvas>
+    <aside
+      id="human-menu"
+      aria-label="Human spawn menu"
+      aria-hidden="true"
+      inert
+    >
+      <h2>Humans</h2>
+
+      <label for="human-amount">Amount</label>
+      <input
+        id="human-amount"
+        type="number"
+        min="1"
+        max="100"
+        step="1"
+        placeholder="Enter amount..."
+        required
+      >
+
+      <button id="spawn-human-button" type="button">Spawn</button>
+
+      <p id="human-spawn-status" hidden>
+        Click on the world to place humans.
+      </p>
+    </aside>
+    <button
+      id="view-village-button"
+      type="button"
+      aria-label="Show village territory"
+      aria-pressed="false"
+      disabled
+    >
+      View Village
+    </button>
+    <section id="simulation-speed" aria-label="Simulation speed">
+      <span id="simulation-speed-label">Speed</span>
+      <div class="simulation-speed-options" role="group" aria-labelledby="simulation-speed-label">
+        <button class="simulation-speed-button is-active" type="button" data-speed="1" aria-pressed="true">1x</button>
+        <button class="simulation-speed-button" type="button" data-speed="2" aria-pressed="false">2x</button>
+        <button class="simulation-speed-button" type="button" data-speed="5" aria-pressed="false">5x</button>
+        <button class="simulation-speed-button" type="button" data-speed="8" aria-pressed="false">8x</button>
+        <button class="simulation-speed-button" type="button" data-speed="10" aria-pressed="false">10x</button>
+        <button class="simulation-speed-button" type="button" data-speed="100" aria-pressed="false">100x</button>
+      </div>
+    </section>
+    <button id="fullscreen-button" type="button" aria-label="Enter fullscreen mode">
+      Fullscreen
+    </button>
+  </main>
+</body>
+</html>
